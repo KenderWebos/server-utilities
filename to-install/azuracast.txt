@@ -1,0 +1,8 @@
+# descargar el repositorio
+
+git clone https://github.com/AzuraCast/AzuraCast.git /var/azuracast
+cd /var/azuracast
+
+# ejecutar el instalador
+
+./docker.sh install
