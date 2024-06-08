@@ -6,8 +6,8 @@ services:
     container_name: wordpress_container
     environment:
       WORDPRESS_DB_HOST: mysql:3306
-      WORDPRESS_DB_USER: wordpress
-      WORDPRESS_DB_PASSWORD: wordpress_password
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD:
       WORDPRESS_DB_NAME: wordpress_db
     ports:
       - "8082:80"

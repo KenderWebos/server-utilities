@@ -7,8 +7,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: HTDB
-      MYSQL_USER: admin
-      MYSQL_PASSWORD: password
+      MYSQL_USER: root
+      MYSQL_PASSWORD:
     ports:
       - "3306:3306"
     volumes:
@@ -21,8 +21,8 @@ services:
     restart: unless-stopped  # Restart phpMyAdmin container automatically
     environment:
       PMA_HOST: mysql  # Link to the mysql service
-      PMA_USER: admin  # Database username (set in mysql service)
-      PMA_PASSWORD: password  # Database password (set in mysql service)
+      PMA_USER: root  # Database username (set in mysql service)
+      PMA_PASSWORD:
     ports:
       - "8081:80"  # Map phpMyAdmin port to your desired host port (e.g., 8080)
     depends_on:
