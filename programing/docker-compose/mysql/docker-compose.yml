@@ -24,7 +24,7 @@ services:
       PMA_USER: admin  # Database username (set in mysql service)
       PMA_PASSWORD: password  # Database password (set in mysql service)
     ports:
-      - "8080:8080"  # Map phpMyAdmin port to your desired host port (e.g., 8080)
+      - "8081:80"  # Map phpMyAdmin port to your desired host port (e.g., 8080)
     depends_on:
       - mysql  # Ensure mysql service starts before phpMyAdmin
 

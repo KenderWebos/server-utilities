@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  wordpress:
+    image: wordpress:latest
+    container_name: wordpress_container
+    environment:
+      WORDPRESS_DB_HOST: mysql:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress_password
+      WORDPRESS_DB_NAME: wordpress_db
+    ports:
+      - "8082:80"
+    volumes:
+      - wordpress_data:/var/www/html
+
+volumes:
+  wordpress_data:
