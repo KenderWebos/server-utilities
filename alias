@@ -1,0 +1,24 @@
+# Mis Alias
+
+# Sistema
+alias update='sudo apt update && sudo apt upgrade -y'
+alias home='cd /home/kender'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias routes='micro ~/.bashrc'
+alias ports='netstat -tulapn'
+alias ls2='tree -L 2'
+alias ls3='tree -L 3'
+alias grep='grep --color=auto'
+alias ipinfo='ip -c a'
+alias df='df -h'
+
+# Proyectos
+alias ht='cd /home/kender/programming/github/HeriTech'
+alias udec='cd /home/kender/programming/github/Proyecto-EPR'
+
+# Docker
+alias dockerps='docker ps --format "{{.Names}} - {{.ID}}"'
+
+# Red
+alias starttblack='wakeonlan 44:37:E6:DC:59:3C'
