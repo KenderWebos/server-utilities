@@ -12,6 +12,13 @@ alias ls3='tree -L 3'
 alias grep='grep --color=auto'
 alias ipinfo='ip -c a'
 alias df='df -h'
+alias pesos='du -h'
+alias pesos_sorted='du -h | sort -hr | head -n 20'
+alias storage='df -h'
+
+alias catrc='cat ~/.bashrc'
+
+alias htpull='(cd /home/kender/programing/github/HeriTech && git pull)'
 
 # Proyectos
 alias ht='cd /home/kender/programming/github/HeriTech'
