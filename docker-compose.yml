@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    ports:
+      - "1313:80"     # Web en puerto 1313
+      - "53:53/tcp"   # DNS TCP
+      - "53:53/udp"   # DNS UDP
+    environment:
+      TZ: "America/Santiago"
+      WEBPASSWORD: "tu_contraseña_segura"
+      DNS1: "1.1.1.1"
+      DNS2: "9.9.9.9"
+    volumes:
+      - pihole_data:/etc/pihole
+      - dnsmasq_data:/etc/dnsmasq.d
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
+
+volumes:
+  pihole_data:
+  dnsmasq_data:
