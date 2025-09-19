@@ -1,23 +1,19 @@
-version: '3.8'
+version: "3.8"
 
 services:
   mongodb:
-    image: mongo:6.0   # compatible ARM
+    image: mongo:6.0
     container_name: mongodb
     restart: unless-stopped
     ports:
       - "27017:27017"
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
-      MONGO_INITDB_ROOT_PASSWORD: password
-      MONGO_INITDB_DATABASE: mydatabase
+      MONGO_INITDB_ROOT_PASSWORD: admin123
     volumes:
-      - mongo_data:/data/db
-    # healthcheck:
-    #   test: ["CMD", "mongo", "--eval", "db.adminCommand('ping')"]
-    #   interval: 10s
-    #   timeout: 5s
-    #   retries: 5
-
-volumes:
-  mongo_data:
+      - ./data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--username", "admin", "--password", "admin123", "--authenticationDatabase", "admin", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
