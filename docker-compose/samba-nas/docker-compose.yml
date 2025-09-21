@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  samba:
+    image: dperson/samba
+    container_name: samba_nas
+    restart: unless-stopped
+    ports:
+      - "7878:7878"
+      - "445:445"   # SMB estándar
+      - "139:139"   # SMB NetBIOS
+    environment:
+      - TZ=America/Santiago
+    volumes:
+      - ./NAS:/mount
+    command: >
+      -u "usuario1;contraseña1"
+      -s "NAS;/mount;yes;no;usuario1"

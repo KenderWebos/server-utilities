@@ -1,0 +1,33 @@
+Puerto: 7878
+
+Carpeta compartida: 1 carpeta
+
+Usuarios con contraseña: sí, permisos por usuario
+
+Acceso remoto: sí (requiere abrir/forwardear el puerto 7878)
+
+Compatibilidad: solo Windows
+
+Persistencia: sí, volumen persistente
+
+Explicación rápida
+
+./NAS → carpeta en tu host que quieres compartir.
+
+-u "usuario1;contraseña1" → usuario Samba con contraseña.
+
+-s "NAS;/mount;yes;no;usuario1" →
+
+yes → lectura/escritura
+
+no → no guest
+
+usuario1 → solo este usuario tiene acceso
+
+Puertos 445 y 139 son necesarios para que Windows reconozca la carpeta como red.
+
+💡 Acceso fuera de tu red:
+
+Debes abrir/forwardear el puerto 7878 y 445 en tu router.
+
+Para seguridad real, lo ideal es usar VPN o túnel SSH, porque exponer SMB directo a Internet es muy riesgoso.
