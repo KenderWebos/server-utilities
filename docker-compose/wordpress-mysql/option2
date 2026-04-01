@@ -1,0 +1,22 @@
+services:
+  wp-db:
+    image: mysql:8.0
+    container_name: wp-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: granum_selecta_db
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: "proyecto super secreto"
+      MYSQL_ROOT_PASSWORD: "proyecto super secreto"
+
+  wordpress:
+    image: wordpress:latest
+    container_name: wordpress-site
+    restart: always
+    ports:
+      - "6767:80"
+    environment:
+      WORDPRESS_DB_HOST: wp-db
+      WORDPRESS_DB_USER: admin
+      WORDPRESS_DB_PASSWORD: "proyecto super secreto"
+      WORDPRESS_DB_NAME: granum_selecta_db
