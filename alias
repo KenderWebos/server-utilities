@@ -15,17 +15,24 @@ alias df='df -h'
 alias pesos='du -h'
 alias pesos_sorted='du -h | sort -hr | head -n 20'
 alias storage='df -h'
+alias temperature='vcgencmd measure_temp'
 
 alias catrc='cat ~/.bashrc'
+alias sara='python /home/kender/ia.py'
 
 alias htpull='(cd /home/kender/programing/github/HeriTech && git pull)'
 
 # Proyectos
-alias ht='cd /home/kender/programming/github/HeriTech'
-alias udec='cd /home/kender/programming/github/Proyecto-EPR'
+alias ht='cd /home/kender/programing/github/HeriTech'
+alias udec='cd /home/kender/programing/github/Proyecto-EPR'
+alias udec-api='cd /home/kender/programing/github/Proyecto-EPR/3. desarrollo-app/epr_api'
 
 # Docker
 alias dockerps='docker ps --format "{{.Names}} - {{.ID}}"'
 
 # Red
-alias starttblack='wakeonlan 44:37:E6:DC:59:3C'
+alias startblack='wakeonlan 44:37:E6:DC:59:3C'
+# alias startpcgames='wakeonlan 2C:F0:5D:6D:3A:B2'
+alias startpcgames='wakeonlan 04:42:1A:0D:6A:F5'
+
+alias hostinger='~/server.sh'
