@@ -1,3 +1,11 @@
+```
+Clonas tu proyecto desde Git.
+Corres terraform init para preparar el provider.
+Corres terraform plan para ver qué cambiará.
+Corres terraform apply para aplicar los cambios.
+```
+
+```
 terraform-project/
 ├── main.tf            # entrypoint general opcional
 ├── variables.tf       # variables globales del proyecto
@@ -20,3 +28,4 @@ terraform-project/
 │       ├── main.tf       # setup de servicios: nginx, bases de datos locales
 │       └── variables.tf
 └── README.md
+```
